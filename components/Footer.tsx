@@ -1,7 +1,11 @@
 'use client';
 
+
+import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import Link from 'next/link';
-import { Heart, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+
+import { Heart, Phone, Mail, MapPin } from 'lucide-react';
+
 
 export default function Footer() {
   return (
@@ -45,8 +49,7 @@ export default function Footer() {
                   e.currentTarget.style.backgroundColor = 'transparent';
                   e.currentTarget.style.color = '#ffffff';
                 }}
-              >
-                <Facebook style={{ width: '20px', height: '20px' }} />
+              ><FaFacebook size={20} />
               </a>
               <a
                 href="#"
@@ -72,7 +75,7 @@ export default function Footer() {
                   e.currentTarget.style.color = '#ffffff';
                 }}
               >
-                <Twitter style={{ width: '20px', height: '20px' }} />
+                <FaXTwitter size={20} />
               </a>
               <a
                 href="#"
@@ -98,7 +101,7 @@ export default function Footer() {
                   e.currentTarget.style.color = '#ffffff';
                 }}
               >
-                <Instagram style={{ width: '20px', height: '20px' }} />
+                <FaInstagram size={20} />
               </a>
               <a
                 href="#"
@@ -124,7 +127,7 @@ export default function Footer() {
                   e.currentTarget.style.color = '#ffffff';
                 }}
               >
-                <Linkedin style={{ width: '20px', height: '20px' }} />
+                <FaLinkedin size={20} />
               </a>
             </div>
           </div>
