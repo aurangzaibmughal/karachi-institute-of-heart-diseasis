@@ -1,0 +1,583 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode body styling */
+.dark body {
+  background-color: #0a0e27;
+  color: #e5e7eb;
+}
+
+/* Dark mode for main sections */
+.dark section {
+  background-color: #0f172a !important;
+}
+
+/* Dark mode for cards and containers */
+.dark .bg-white {
+  background-color: #1e293b !important;
+  color: #e5e7eb !important;
+}
+
+/* Dark mode text colors */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #f1f5f9 !important;
+}
+
+.dark p {
+  color: #cbd5e1 !important;
+}
+
+/* Dark mode for offWhite backgrounds */
+.dark .bg-offWhite {
+  background-color: #0f172a !important;
+}
+
+/* Dark mode for shadows */
+.dark .shadow-lg, .dark .shadow-xl {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff, #f4a261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Direct CSS classes with !important to override Tailwind purging */
+.hero-section {
+  background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 50%, #2d5a8e 100%) !important;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.navbar-bg {
+  background-color: #1e3a5f !important;
+}
+
+.stats-bg {
+  background-color: #1e3a5f !important;
+}
+
+.dark-section {
+  background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%) !important;
+}
+
+.footer-bg {
+  background-color: #0a1628 !important;
+}
+
+/* Animated Heart Keyframes */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.08); }
+  60% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 0.2; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes ekg {
+  0% { stroke-dasharray: 0 200; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 200 0; stroke-dashoffset: 0; }
+  100% { stroke-dasharray: 0 200; stroke-dashoffset: -200; }
+}
+
+/* Hide right column on mobile */
+@media (max-width: 768px) {
+  .hero-right-column {
+    display: none !important;
+  }
+}
+
+/* ===== DARK MODE STYLES ===== */
+
+/* Dark mode base colors */
+.dark {
+  --dark-bg-primary: #0a0e27;
+  --dark-bg-secondary: #1e293b;
+  --dark-bg-card: #1e293b;
+  --dark-text-primary: #f1f5f9;
+  --dark-text-secondary: #cbd5e1;
+  --dark-border: #374151;
+  --dark-accent: #3b82f6;
+}
+
+/* Dark mode for gradient backgrounds */
+.dark .hero-section {
+  background: linear-gradient(135deg, #0a0e27 0%, #1e293b 50%, #1e3a5f 100%) !important;
+}
+
+.dark .dark-section {
+  background: linear-gradient(135deg, #0a0e27 0%, #1e293b 100%) !important;
+}
+
+.dark .navbar-bg,
+.dark .stats-bg {
+  background-color: #0f172a !important;
+}
+
+.dark .footer-bg {
+  background-color: #020617 !important;
+}
+
+/* Dark mode for main sections */
+.dark main {
+  background-color: var(--dark-bg-primary);
+}
+
+.dark section {
+  background-color: transparent;
+}
+
+/* Dark mode for cards with better contrast */
+.dark .bg-white {
+  background: linear-gradient(145deg, #1e293b, #334155) !important;
+  color: var(--dark-text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode headings with proper hierarchy */
+.dark h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+}
+
+.dark h2, .dark h3 {
+  color: #f1f5f9 !important;
+}
+
+.dark h4, .dark h5, .dark h6 {
+  color: #e2e8f0 !important;
+}
+
+/* Dark mode paragraph text */
+.dark p {
+  color: #cbd5e1 !important;
+}
+
+/* Dark mode for offWhite backgrounds */
+.dark .bg-offWhite {
+  background-color: #0f172a !important;
+}
+
+/* Dark mode shadows - more prominent */
+.dark .shadow-lg {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .shadow-xl {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Dark mode for buttons - medical theme */
+.dark button:not(.whatsapp-btn) {
+  background: linear-gradient(135deg, #1e3a5f, #2d5a8e);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.dark button:not(.whatsapp-btn):hover {
+  background: linear-gradient(135deg, #2d5a8e, #3b82f6);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Dark mode for inputs with glass effect */
+.dark input:not([type="submit"]),
+.dark textarea,
+.dark select {
+  background: rgba(30, 41, 59, 0.8) !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(148, 163, 184, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  background: rgba(30, 41, 59, 0.9) !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder,
+.dark select::placeholder {
+  color: rgba(203, 213, 225, 0.6) !important;
+}
+
+/* Dark mode for labels - better visibility */
+.dark label {
+  color: #e2e8f0 !important;
+  font-weight: 500;
+}
+
+/* Dark mode for links - medical blue */
+.dark a:not([class*="bg-"]) {
+  color: #60a5fa;
+}
+
+.dark a:not([class*="bg-"]):hover {
+  color: #93c5fd;
+}
+
+/* Dark mode for service cards */
+.dark .service-card,
+.dark [class*="card"] {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.dark .service-card:hover,
+.dark [class*="card"]:hover {
+  background: linear-gradient(145deg, #334155, #475569);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2);
+}
+
+/* Dark mode for stats section - highlight numbers */
+.dark .stats-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+}
+
+/* Dark mode for icon containers */
+.dark [class*="icon"],
+.dark svg {
+  filter: brightness(1.2);
+}
+
+/* Dark mode for emergency button */
+.dark .emergency-btn {
+  background-color: #dc2626 !important;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+}
+
+.dark .emergency-btn:hover {
+  background-color: #b91c1c !important;
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+}
+
+/* Dark mode for WhatsApp button */
+.dark .whatsapp-btn {
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4) !important;
+}
+
+/* Dark mode for borders */
+.dark [class*="border"] {
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+/* Dark mode for badges and pills */
+.dark [class*="badge"],
+.dark [class*="pill"] {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* ===== Contact Page Enhancements ===== */
+
+/* Contact Form Container */
+.contact-form-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0a1628, #1e3a5f, #2d5a8e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.contact-form-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced Form Inputs */
+.contact-input {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-input:focus {
+  transform: translateY(-2px);
+  border-bottom-width: 3px !important;
+}
+
+.contact-input::placeholder {
+  transition: opacity 0.3s ease;
+}
+
+.contact-input:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* Select Dropdown Enhancement */
+.contact-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231e3a5f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-select:focus {
+  transform: translateY(-2px);
+  border-bottom-width: 3px !important;
+}
+
+/* Textarea Enhancement */
+.contact-textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-textarea:focus {
+  transform: translateY(-2px);
+  border-bottom-width: 3px !important;
+}
+
+/* Submit Button Enhancement */
+.contact-submit-btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.contact-submit-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.contact-submit-btn:hover {
+  box-shadow: 0 6px 25px rgba(30, 58, 95, 0.5);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Success Message Animation */
+.contact-success-message {
+  animation: slideInDown 0.5s ease-out, fadeIn 0.5s ease-out;
+  border-left: 4px solid #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Contact Info Card Enhancement */
+.contact-info-card {
+  position: relative;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8e 100%);
+  box-shadow: 0 10px 40px rgba(30, 58, 95, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(30, 58, 95, 0.4);
+}
+
+/* Contact Info Items */
+.contact-info-item {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.contact-info-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.contact-info-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-info-item:hover .contact-info-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* WhatsApp Button Enhancement */
+.whatsapp-btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.whatsapp-btn:hover::before {
+  left: 100%;
+}
+
+.whatsapp-btn:hover {
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+  transform: scale(1.05);
+}
+
+/* Map Placeholder Enhancement */
+.map-placeholder {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+}
+
+.map-placeholder:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.map-placeholder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s;
+}
+
+.map-placeholder:hover::after {
+  left: 100%;
+}
+
+/* Label Animation */
+.contact-label {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contact-input:focus + .contact-label,
+.contact-select:focus + .contact-label,
+.contact-textarea:focus + .contact-label {
+  color: #1e3a5f;
+  transform: translateY(-2px);
+}
+
+/* Form Field Container */
+.form-field {
+  position: relative;
+}
+
+.form-field::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1e3a5f, #2d5a8e);
+  transform: translateX(-50%);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field:focus-within::after {
+  width: 100%;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1024px) {
+  .contact-info-card {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-form-card,
+  .contact-info-card {
+    padding: 1.5rem !important;
+  }
+
+  .contact-submit-btn {
+    font-size: 0.95rem;
+    padding: 1rem !important;
+  }
+}
+
+:root { color-scheme: dark; } html { background: #0a1628 !important; }
